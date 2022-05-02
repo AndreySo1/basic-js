@@ -18,17 +18,18 @@ function createDreamTeam(members) {
   // remove line with error and write your code here
    let newArr = [];
 
-   for(let i=0; i< members.length; i++){
-      if(typeof(members[i]) == 'string'){
-         let first = members[i][0];
-         newArr.push(first);
+   for(let i=0; i < members.length; i++){  
+      if( typeof(members[i]) == 'string' ){
+         let firstCharNotSpace = members[i].trim();
+         let first = firstCharNotSpace[0]; 
+         newArr.push(first.toUpperCase());
       };
    };
 
-   if(!newArr.length) { return false;};
+   if(!newArr.length){ return false;};
 
    let result = newArr.sort();
-   
+
    return result.join('');
 }
 
